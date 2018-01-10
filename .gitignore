@@ -1,0 +1,19 @@
+# Include your project-specific ignores in this file
+# Read about how to use .gitignore: https://help.github.com/articles/ignoring-files
+# Useful .gitignore templates: https://github.com/github/gitignore
+.idea
+doc
+.editorconfig
+.gitattributes
+.htaccess
+404.html
+browserconfig.xml
+favicon.ico
+humans.txt
+icon.png
+LICENSE.txt
+newKanban.iml
+robots.txt
+site.webmanifest
+tile.png
+tile-wide.png
