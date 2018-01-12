@@ -26,11 +26,10 @@ function Column(id, name) {
                 url: baseUrl + '/column/' + self.id,
                 method: 'PUT',
                 data: {
-                    id: self.id,
                     name: columnName
                 },
-                success: function(response) {
-                    self.updateName(response.name);
+                success: function() {
+                    columnTitle.text(columnName);
                 }
             })
         });
@@ -46,7 +45,7 @@ function Column(id, name) {
                     bootcamp_kanban_column_id: self.id
                 },
                 success: function (response) {
-                    var card = new Card(response.id, cardName);
+                    var card = new Card(response.id, cardName, self.id);
                     self.createCard(card);
                 }
             });
@@ -75,9 +74,5 @@ Column.prototype = {
                 self.element.remove();
             }
         });
-    },
-    updateName: function (column) {
-        self.name.text(column.name);
-
     }
 };

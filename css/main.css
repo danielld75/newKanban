@@ -114,6 +114,16 @@ body {margin: 0;}
     background-color: rgba(0,0,0,0.4);
     color: white;
 }
+.btn-edit {
+    position: absolute;
+    right: 22px;
+    top: 0;
+    width: 22px;
+    height: 22px;
+    border: 0;
+    background-color: rgba(0,0,0,0.4);
+    color: yellow;
+}
 /* BOARD */
 .board h1 {
     margin-left: 8px;
