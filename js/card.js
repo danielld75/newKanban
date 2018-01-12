@@ -7,7 +7,7 @@ function Card(id, name, columnId) {
     this.element = createCard();
 
     function createCard() {
-        var card = $('<li class="card"></li>');
+        var card = $('<li class="card"></li>').attr("data-card-id", self.id);
         var cardEditDescription = $('<button class="btn-edit">e</button>');
         var cardDeleteBtn = $('<button class="btn-delete">x</button>');
         var cardDescription = $('<p class="card-description"></p>');
