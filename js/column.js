@@ -19,7 +19,7 @@ function Column(id, name) {
             self.deleteColumn();
         });
 
-        columnUpdateName.click(function(event){
+        columnUpdateName.click(function (event) {
             var columnName = prompt("Enter new column name");
             event.preventDefault();
             $.ajax({
@@ -28,7 +28,7 @@ function Column(id, name) {
                 data: {
                     name: columnName
                 },
-                success: function() {
+                success: function () {
                     columnTitle.text(columnName);
                 }
             })
@@ -37,18 +37,20 @@ function Column(id, name) {
         columnAddCard.click(function (event) {
             var cardName = prompt("Enter the name of the card");
             event.preventDefault();
-            $.ajax({
-                url: baseUrl + '/card',
-                method: 'POST',
-                data: {
-                    name: cardName,
-                    bootcamp_kanban_column_id: self.id
-                },
-                success: function (response) {
-                    var card = new Card(response.id, cardName, self.id);
-                    self.createCard(card);
-                }
-            });
+            if (cardName !== null) {
+                $.ajax({
+                    url: baseUrl + '/card',
+                    method: 'POST',
+                    data: {
+                        name: cardName,
+                        bootcamp_kanban_column_id: self.id
+                    },
+                    success: function (response) {
+                        var card = new Card(response.id, cardName, self.id);
+                        self.createCard(card);
+                    }
+                });
+            }
         });
 
         // KONSTRUOWANIE ELEMENTU KOLUMNY
